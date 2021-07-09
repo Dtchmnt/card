@@ -43,6 +43,6 @@ class User extends Authenticatable
     ];
     public function Social()
     {
-        return $this->hasOne(Social::class,'user_id');
+        return $this->hasOne(Media::class,'user_id');
     }
 }

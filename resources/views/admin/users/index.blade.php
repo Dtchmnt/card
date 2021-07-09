@@ -111,7 +111,7 @@
                 </div>
                 <!-- /.card-body -->
             </div>
-            {{ $users->links() }}
+
         </div>
 
     </section>

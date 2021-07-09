@@ -1,0 +1,364 @@
+html{
+    height: 100%;
+}
+body{
+    width: 100%;
+    height: 100%;
+    min-width: 320px;
+    margin: 0;
+    position: relative;
+    font-family: Rubik,sans-serif;
+    overflow-x: hidden;
+    opacity: 1;
+}
+.background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: url(https://static.vecteezy.com/system/resources/previews/001/217/322/original/light-blue-mosaic-background-vector.jpg);
+    z-index: 0;
+    -webkit-filter: grayscale(60%);
+    filter: grayscale(60%);
+}
+
+.page {
+    margin: 20px auto;
+    max-width: 375px;
+    min-width: 320px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    z-index: 999;
+}
+@media (max-width: 400px) {
+    .page {
+        margin: 0 !important;;
+        border-radius: 0 !important;;
+    }
+    .page .pic {;
+        border-radius: 0 !important;;
+    }
+}
+@media (min-width: 400px) {
+    body {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-line-pack: center;
+        align-content: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+}
+@media (min-height: 650px) and (max-width: 400px) {
+    .page {
+        height: 100% !important;
+    }
+}
+.page a, .page a:active, .page a:visited, .page a:hover {
+    text-decoration: none;
+    color: #fff;
+}
+.page .over-content {
+    padding: 20px;
+}
+.page .pcontent {
+    background-color: #fff;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    padding: 20px;
+    margin: -50px 0 0 0;
+}
+.page .pic{
+    height: 240px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px 10px 0 0;
+}
+.page .pcontent .name {
+    text-align: center;
+    color: #0f0f0f;
+    font-size: 22px;
+    /*margin: 20px 40px 20px 40px;*/
+    word-wrap: break-word;
+}
+.page .pcontent .description {
+    text-align: center;
+    color: #888888;
+    font-size: 14px;
+    /*margin: 20px 40px 20px 40px;*/
+    margin: 12px 0 0 0;
+    word-wrap: break-word;
+}
+
+.page .pcontent .description2ndline {
+    text-align: center;
+    color: #888888;
+    font-size: 14px;
+    /*margin: 20px 40px 20px 40px;*/
+    margin: 0 0 0 0;
+    word-wrap: break-word;
+}
+
+.button-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+    -webkit-box-pack: space-evenly;
+    justify-content: space-evenly;
+    margin-top: 10px;
+    margin-bottom: -10px;
+}
+.button-list .button {
+    border-radius: 10px;
+    width: 100px;
+    height: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 10px;
+    text-decoration: none;
+    font-weight: 500;
+}
+.website {
+    border-radius: 10px;
+    width: 100%;
+    height: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: #4f4f4f;
+    color: #fff;
+    margin-top: 40px;
+}
+
+.vcard {
+    border-radius: 10px;
+    width: 100%;
+    height: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: #3b5998;
+    color: #fff;
+    margin-top: 10px;
+}
+
+
+.button-list .button:nth-child(2),.button:nth-child(5),.button:nth-child(8), .button:nth-child(11) {margin-left:4px;margin-right: 4px;}
+
+.button-list.count1 .button, .button-list.count2 .button {
+    width: 100%;
+}
+.button-list.count3 .button:nth-child(1) {
+    width: 100%;
+}
+.button-list.count3 .button:nth-child(2), .button-list.count3 .button:nth-child(3) {
+    width: 48%;
+}
+.button-list.count4 .button {
+    width: 48%;
+}
+.button-list.count5 .button:nth-child(1), .button-list.count5 .button:nth-child(2) {
+    width: 48%;
+}
+.button-list.count5 .button:nth-child(3), .button-list.count5 .button:nth-child(4), .button-list.count5 .button:nth-child(5) {
+    width: 32%;
+    font-size: 0;
+}
+.button-list.count6 .button {
+    width: 32%;
+    font-size: 0;
+}
+.button-list .button.facebook i {
+    background-image: url('../img/icons/Facebook.png');
+    display: block;
+    width: 12px;
+    height: 21px;
+    background-color: #3b5998;
+    color: #fff;
+}
+.button-list .button.whatsapp i {
+    background-image: url('../img/icons/WhatsApp.png');
+    display: block;
+    width: 25px;
+    height: 24px;
+    background-color: #25d366;
+    color: #fff;
+}
+.button-list .button.vk i {
+    background-image: url('../img/icons/VK.png');
+    display: block;
+    width: 25px;
+    height: 15px;
+    background-color: #2787F5;
+    color: #fff;
+}
+.button-list .button.viber i {
+    background-image: url('../img/icons/Viber.png');
+    display: block;
+    width: 23px;
+    height: 24px;
+    background-color: #59267c;
+    color: #fff;
+}
+.button-list .button.phone i {
+    background-image: url('../img/icons/Phone.png');
+    display: block;
+    width: 21px;
+    height: 21px;
+    background-color: #417505;
+    color: #fff;
+}
+
+.button-list .button.youtube i {
+    background-image: url('../img/icons/YouTube.png');
+    display: block;
+    width: 33px;
+    height: 27px;
+    background-color: #c4302b;
+    color: #fff;
+}
+.button-list .button.twitter i {
+    background-image: url('../img/icons/Twitter.png');
+    display: block;
+    width: 21px;
+    height: 17px;
+    background-color: #00acee;
+    color: #fff;
+}
+.button-list .button.tg i {
+    background-image: url('../img/icons/Telegram.png');
+    display: block;
+    width: 22px;
+    height: 19px;
+    background-color: #31a8e0;
+    color: #fff;
+}
+
+.button-list .button.mail i {
+    background-image: url('../img/icons/Mail.png');
+    display: block;
+    width: 35px;
+    height: 29px;
+    background-color: #0088cc;
+    color: #fff;
+}
+
+.button-list .button.instagram i {
+    background-image: url('../img/icons/Instagram.png');
+    display: block;
+    width: 40px;
+    height: 30px;
+    background-color: #d3307c;
+    color: #fff;
+}
+
+.button-list .button.linkedin i {
+    background-image: url('../img/icons/Linkedin.png');
+    display: block;
+    width: 33px;
+    height: 27px;
+    background-color: #2867B2;
+    color: #fff;
+}
+
+
+.button-list .button.facebook {
+    background-color: #3b5998;
+    color: #fff;
+}
+.button-list .button.whatsapp {
+    background-color: #25d366;
+    color: #fff;
+}
+.button-list .button.vk {
+    background-color: #2787F5;
+    color: #fff;
+}
+.button-list .button.viber {
+    background-color: #59267c;
+    color: #fff;
+}
+.button-list .button.phone {
+    background-color: #417505;
+    color: #fff;
+}
+
+.button-list .button.youtube{
+    background-color: #c4302b;
+    color: #fff;
+}
+.button-list .button.twitter{
+    background-color: #00acee;
+    color: #fff;
+}
+.button-list .button.tg {
+    background-color: #31a8e0;
+    color: #fff;
+}
+
+.button-list .button.mail {
+    background-color: #0088cc;
+    color: #fff;
+}
+
+.button-list .button.instagram{
+    background-color: #d3307c;
+    color: #fff;
+}
+
+.button-list .button.linkedin {
+    background-color: #2867B2;
+    color: #fff;
+}
+
+
+.page .page-footer {
+    text-align: center;
+    padding: 20px;
+}
+.page .page-footer a{background-color: rgba(0,0,0,0.5);padding: 5px;border-radius: 5px;font-size: 11px;display: block;}
+
+.page .page-footer .banner {
+    text-decoration: none;
+}
+.page .page-footer .banner:hover, .page .page-footer .banner:active, .page .page-footer .banner:visited {
+    text-decoration: none;
+    cursor: pointer;
+}
+.page .page-footer .banner img {
+    max-width: 100%;
+    max-height: 100px;
+}

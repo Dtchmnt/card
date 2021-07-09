@@ -2,22 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Social;
+use App\Models\Media;
 use Illuminate\Http\Request;
 
 class MediaController extends Controller
 {
-    public function index(Social $social, $id)
+    public function index(Media $social, $id)
     {
 
     }
 
-    public function findById(Social $social, $id)
+    public function findById(Media $social, $id)
     {
-        $media = Social::find($id);
-//возвращаем эдит форму и подставляем данные пиздец бля
+        $media = Media::findOrFail($id);
         return view('card.index',[
             'media' => $media
         ]);
+
     }
 }

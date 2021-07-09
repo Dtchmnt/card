@@ -71,6 +71,14 @@
                         <p class="text-muted">
                             {{$media['in']}}
                         </p>
+                        <strong><i class="fab fa-vk mr-1"></i> Vk</strong>
+                        <p class="text-muted">
+                            {{$media['vk']}}
+                        </p>
+                        <strong><i class="fab fa-youtube mr-1"></i> Youtube</strong>
+                        <p class="text-muted">
+                            {{$media['youtube']}}
+                        </p>
                         <hr>
                             <a class="btn btn-primary btn-sm" href="{{ route('media.edit', $media['id']) }}"><b>Изменить данные</b></a>
                     </div>

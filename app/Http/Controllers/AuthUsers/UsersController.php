@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\AuthUsers;
 
 use App\Http\Controllers\Controller;
-use App\Models\Social;
+use App\Models\Media;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -29,7 +29,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $users = Social::whereUserId(auth()->user()->id)->orderByDesc('created_at')->paginate(5);
+        $users = Media::whereUserId(auth()->user()->id)->orderByDesc('created_at')->paginate(5);
         return view('home', [
             'users' => $users
         ]);

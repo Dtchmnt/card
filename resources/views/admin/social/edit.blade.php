@@ -131,6 +131,18 @@
                                                        required maxlength="255"
                                                        value="{{ old('in') ?? $socials->in ?? '' }}">
                                             </div>
+                                            <div class="form-group">
+                                                <label for="vk">Ссылка на vk</label>
+                                                <input type="text" class="form-control" name="vk" placeholder="vk"
+                                                       required maxlength="255"
+                                                       value="{{ old('vk') ?? $socials->vk ?? '' }}">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="youtube">Ссылка на youtube</label>
+                                                <input type="text" class="form-control" name="youtube" placeholder="youtube"
+                                                       required maxlength="255"
+                                                       value="{{ old('youtube') ?? $socials->youtube ?? '' }}">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
