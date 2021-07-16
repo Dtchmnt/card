@@ -95,7 +95,7 @@
                                         <div class="card-body">
                                             <div class="form-group">
                                                 <label for="telegram">Телеграм</label>
-                                                <input type="text" class="form-control" name="telegram"
+                                                <input type="url" class="form-control" name="telegram"
                                                        placeholder="Телеграм"
                                                        maxlength="255"
                                                        value="{{ old('telegram') ?? $socials->telegram ?? '' }}">

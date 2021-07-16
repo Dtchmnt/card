@@ -34,7 +34,7 @@
                         @endif
                         <i></i></a>
                     @if($media->telegram)
-                        <a href="{{ url('https://t.me/').$media->telegram }}" class="button tg">
+                        <a href="{{ url($media->telegram )}}" class="button tg">
                             @endif
                             <i></i></a>
                         @if($media->vk)

@@ -88,7 +88,7 @@
                                             <div class="card-body">
                                                 <div class="form-group">
                                                     <label for="telegram">Телеграм</label>
-                                                    <input type="text" class="form-control" name="telegram"
+                                                    <input type="url" class="form-control" name="telegram"
                                                            placeholder="Телеграм"
                                                            maxlength="255"
                                                            value="{{ old('telegram') ?? $userMedia->telegram ?? '' }}">
@@ -164,6 +164,8 @@
         $(function () {
             //2. Получить элемент, к которому необходимо добавить маску
             $("#phone").mask("+7(999) 999-9999");
+            $("#whats").mask("+7(999) 999-9999");
+            $("#viber").mask("+7(999) 999-9999");
         });
         $("#email").inputmask('email');
     </script>

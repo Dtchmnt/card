@@ -28,7 +28,7 @@ class MediaRequest extends FormRequest
             'last_name' => 'max:255|nullable',
             'email' => 'email|nullable',
             'phone' => 'string|nullable',
-            'telegram' => 'string|max:255|nullable',
+            'telegram' => 'url|nullable',
             'whats' => 'string|nullable',
             'viber' => 'string|nullable',
             'facebook' => 'url|nullable',
