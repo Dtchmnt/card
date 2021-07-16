@@ -26,6 +26,7 @@ class CreateMediaTable extends Migration
             $table->string('whats',20)->unique()->nullable();
             $table->string('viber',20)->unique()->nullable();
             $table->string('facebook')->unique()->nullable();
+            $table->string('vk')->unique()->nullable();
             $table->string('instagram')->unique()->nullable();
             $table->string('twitter')->unique()->nullable();
             $table->string('slug')->unique()->nullable();
