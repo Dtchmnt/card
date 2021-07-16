@@ -2,6 +2,11 @@
 
 namespace App\Http\Controllers\AuthUsers;
 
+use App\Http\Requests\AvatarRequest;
+use App\Http\Requests\PasswordRequest;
+use App\Repositories\EloquentUsersMedia;
+use Image;
+
 use App\Http\Controllers\Controller;
 use App\Models\Media;
 use App\Models\User;
@@ -40,18 +45,18 @@ class UsersController extends Controller
         return view('user.edit');
     }
 
-    public function update(Request $request)
+    public function update(PasswordRequest $request)
     {
-        if ($request->change_password) {
-            Auth::user()->update([
-                'name' => $request->input('name'),
-                'password' => Hash::make($request['password']),
-            ]);
-        } else {
-            Auth::user()->update([
-                'name' => $request->input('name'),
-            ]);
-        }
+
+        Auth::user()->update([
+            'password' => Hash::make($request['password']),
+        ]);
         return redirect()->back()->withSuccess('Пользователь успешно обновлен');
+    }
+
+    public function updateAvatar(EloquentUsersMedia $userEloquent, AvatarRequest $request)
+    {
+        $userEloquent->updateAvatarAuthUser($request);
+        return redirect()->back()->withSuccess('Аватарка успешно изменена');
     }
 }

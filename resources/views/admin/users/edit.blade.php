@@ -30,6 +30,15 @@
                         <form action="{{ route('users.update', $users['id']) }}" method="POST">
                             @csrf
                             @method('PUT')
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div><br />
+                            @endif
                             <div class="card-body">
                                 <div class="form-group">
                                     <input type="text" class="form-control" name="name" placeholder="Имя, Фамилия"
@@ -43,11 +52,11 @@
                                     </label>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="password" maxlength="255"
+                                    <input  type="password" class="form-control" name="password" maxlength="255"
                                            placeholder="Новый пароль" value="">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="password_confirmation" maxlength="255"
+                                    <input  type="password" class="form-control" name="password_confirmation" maxlength="255"
                                            placeholder="Пароль еще раз" value="">
                                 </div>
                                 <div class="form-group">

@@ -38,12 +38,7 @@ class LoginController extends Controller
      */
     protected function authenticated(Request $request, $user)
     {
-        if($user->id == 1) {
-            return redirect()->intended('/admin_panel'); // it will be according to your routes.
-
-        } else {
             return redirect()->intended('/home'); // it also be according to your need and routes
-        }
     }
     public function __construct()
     {

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UserRequest;
 use App\Models\Media;
 use App\Models\User;
 use App\Repositories\EloquentUsersMedia;
@@ -43,7 +44,7 @@ class UsersMediaController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(EloquentUsersMedia $usersEloquent, Request $request)
+    public function store(EloquentUsersMedia $usersEloquent, UserRequest $request)
     {
         $usersEloquent->storeUser($request);
         return redirect()->back()->withSuccess('Пользователь успешно добавлен');

@@ -18,6 +18,7 @@
                 <h4><i class="icon fa fa-check"></i>{{ session('success') }}</h4>
             </div>
         @endif
+
     </div>
 </div>
     <section class="content">
@@ -32,6 +33,15 @@
                         <!-- form start -->
                         <form action="{{ route('users.store') }}" method="POST">
                             @csrf
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div><br />
+                            @endif
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Логин</label>
@@ -52,10 +62,14 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Потвердите пароль</label>
-                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                    <label for="exampleInputPassword1">Потвердтие пароль</label>
+                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password_confirmation" required autocomplete="new-password">
+                                    @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                 </div>
-                            </div>
                             <!-- /.card-body -->
 
                             <div class="card-footer">

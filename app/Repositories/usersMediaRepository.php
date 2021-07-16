@@ -2,6 +2,9 @@
 
 namespace App\Repositories;
 
+use App\Http\Requests\AvatarRequest;
+use App\Http\Requests\MediaRequest;
+use App\Http\Requests\UserRequest;
 use App\Models\Media;
 use App\Models\User;
 use Illuminate\Support\Collection;
@@ -14,7 +17,7 @@ interface usersMediaRepository
      *
      * @return Collection
      */
-    public function getAll(): Collection;
+    public function getAll();
 
     /**
      * Get user by id
@@ -34,7 +37,7 @@ interface usersMediaRepository
      * @param Request $request
      * @return mixed
      */
-    public function storeUser(Request $request);
+    public function storeUser(UserRequest $request);
 
     /**
      * @param Request $request
@@ -54,5 +57,22 @@ interface usersMediaRepository
      * @return mixed
      */
     public function search(Request $request);
+
+    /**
+     * @param Request $request
+     * @return mixed
+     */
+    public function updateAvatarAuthUser(AvatarRequest $request);
+
+    /**
+     * @param Request $request
+     * @param $id
+     * @return mixed
+     */
+    public function updateAvatarAdmin(AvatarRequest $request, $id);
+
+    public function updateMediaAdmin(MediaRequest $request, $id);
+
+    public function updateMediaAuthUser(MediaRequest $request);
 
 }

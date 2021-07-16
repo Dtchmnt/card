@@ -18,8 +18,18 @@
                     <h4><i class="icon fa fa-check"></i>{{ session('success') }}</h4>
                 </div>
             @endif
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div><br />
+            @endif
         </div>
     </div>
+
     <section class="content">
         <div class="row">
             <div class="col-sm-6">
@@ -27,7 +37,20 @@
                     <div class="card-body">
                         <img src="{{'/storage/'.$media['img']}}" alt="" class="img-fluid">
                     </div>
+                    <form action="{{ route('admin.updateAvatar', $media->id) }}" method="POST"
+                          enctype="multipart/form-data">
+                        @csrf
+                        @method('PUT')
+                    <div class="form-group">
+                        <label for="img">Загрузить аватар</label><br>
+                        <input type="file" name="img" id="img">
+                    </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Сохранить</button>
+                        </div>
+                    </form>
                     <div class="card-body">
+                        <strong><i class="text"></i> Описание</strong>
                         <h2 class="text-muted">
                             {{$media['description']}}
                         </h2>
@@ -78,6 +101,10 @@
                         <strong><i class="fab fa-youtube mr-1"></i> Youtube</strong>
                         <p class="text-muted">
                             {{$media['youtube']}}
+                        </p>
+                        <strong><i class="fab fa-twitter mr-1"></i> twitter</strong>
+                        <p class="text-muted">
+                            {{$media['twitter']}}
                         </p>
                         <hr>
                             <a class="btn btn-primary btn-sm" href="{{ route('media.edit', $media['id']) }}"><b>Изменить данные</b></a>

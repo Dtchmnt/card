@@ -56,6 +56,9 @@
                                 Просмотр и редактирование данных
                             </th>
                             <th style="width: 20%">
+                                Ссылка
+                            </th>
+                            <th style="width: 10%">
                                 Удаление
                             </th>
 
@@ -69,7 +72,7 @@
                             </td>
                             <td>
                                 <div class="text-center">
-                                    <img src="{{'/storage/'.$user['img']}}" alt="" class="img-lg">
+                                    <img src="{{'/storage/'.$user['img']}}" alt="" class="img-fluid">
                                 </div>
                             </td>
                             <td>
@@ -94,6 +97,9 @@
                                 </a>
                             </td>
                             <td>
+                                <a href="/card/{{$user['slug']}}">{{Request::root().'/card/'.$user['slug']}}</a>
+                            </td>
+                            <td>
                                 <form action="{{ route('users.destroy', $user['user_id'])}}" method="POST">
                                     @csrf
                                     @method('DELETE')
@@ -111,7 +117,7 @@
                 </div>
                 <!-- /.card-body -->
             </div>
-
+            {{ $users->links() }}
         </div>
 
     </section>

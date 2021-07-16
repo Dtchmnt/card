@@ -26,7 +26,7 @@
             <div class="description2ndline">
                 &nbsp;
             </div>
-            <a class="vcard" href="css/Ilnar_Mingalimov.vcf" target="_blank">
+            <a class="vcard" href="{{route('downloadVcard', $media->id)}}" target="_blank">
                 Add to phone contacts </a>
             <div class="button-list count6">
                 @if($media->phone)
@@ -69,6 +69,10 @@
                                                         <a href="{{url($media->youtube)}}" class="button youtube">
                                                             @endif
                                                             <i></i></a>
+                                                        @if($media->twitter)
+                                                            <a href="{{url($media->twitter)}}" class="button twitter">
+                                                                @endif
+                                                                <i></i></a>
             </div>
         </div>
         <div class="page-footer">

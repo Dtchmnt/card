@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\AuthUsers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\MediaRequest;
 use App\Models\Media;
 use App\Models\User;
+use App\Repositories\EloquentUsersMedia;
 use Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -36,33 +38,9 @@ class MediaController extends Controller
         ]);
     }
 
-    public function update(Request $request, Media $social)
+    public function update(EloquentUsersMedia $usersMedia, MediaRequest $request)
     {
-
-        $social = Media::where('user_id', Auth::user()->id)->first();
-        $social->first_name = $request->first_name;
-        $social->last_name = $request->last_name;
-        $social->description = $request->description;
-        $social->email = $request->email;
-        $social->img = $request->img;
-        $social->phone = $request->phone;
-        $social->telegram = $request->telegram;
-        $social->whats = $request->whats;
-        $social->viber = $request->viber;
-        $social->facebook = $request->facebook;
-        $social->instagram = $request->instagram;
-        $social->in = $request->in;
-        $social->vk = $request->vk;
-        $social->youtube = $request->youtube;
-        $social->user_id = Auth::user()->id;
-        if ($request->hasFile('img')) {
-            $avatar = $request->file('img');
-            $filename = time() . '.' . $avatar->getClientOriginalExtension();
-            Image::make($avatar)->resize(300, 300)
-                ->save(public_path('/storage/') . $filename);
-            $social->img = $filename;
-        }
-        $social->update();
+        $usersMedia->updateMediaAuthUser($request);
         return redirect()->back()->withSuccess('Пользователь успешно обновлен');
     }
 }
